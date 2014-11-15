@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{161911A1-44D0-4613-A82B-7BE9CB5EDB13}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MISOI.Core</RootNamespace>
+    <AssemblyName>MISOI.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MathNet.Numerics">
+      <HintPath>..\packages\MathNet.Numerics.3.2.3\lib\net40\MathNet.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Graphics\IChart.cs" />
+    <Compile Include="Graphics\LuminanceChart.cs" />
+    <Compile Include="Imaging\Clustering\Attributes\Implementation\AverageBrightness.cs" />
+    <Compile Include="Imaging\Clustering\Attributes\Implementation\AverageColor.cs" />
+    <Compile Include="Imaging\Clustering\Attributes\Implementation\BrightnessDispersion.cs" />
+    <Compile Include="Imaging\Clustering\Attributes\Implementation\CenterOfMass.cs" />
+    <Compile Include="Imaging\Clustering\Attributes\Implementation\Density.cs" />
+    <Compile Include="Imaging\Clustering\Attributes\Implementation\DiscreteCentralMoment.cs" />
+    <Compile Include="Imaging\Clustering\Attributes\Implementation\Elongation.cs" />
+    <Compile Include="Imaging\Clustering\Attributes\Implementation\PrincipalAxisOrientation.cs" />
+    <Compile Include="Imaging\Clustering\Attributes\ISign.cs" />
+    <Compile Include="Imaging\Clustering\Attributes\Implementation\Perimeter.cs" />
+    <Compile Include="Imaging\Clustering\Attributes\Implementation\Square.cs" />
+    <Compile Include="Imaging\Clustering\ClusteringProcessor.cs" />
+    <Compile Include="Imaging\Clustering\IClusteringAlgorithmFactory.cs" />
+    <Compile Include="Imaging\Clustering\IClusteringProcessor.cs" />
+    <Compile Include="Imaging\Clustering\KmedianAlgorithmFactory.cs" />
+    <Compile Include="Imaging\Clustering\Kmedian\IClusteringCenter.cs" />
+    <Compile Include="Imaging\Clustering\Kmedian\ICenterDeterminingAlgorithm.cs" />
+    <Compile Include="Imaging\Clustering\Kmedian\Implementation\ClusteringCenter.cs" />
+    <Compile Include="Imaging\Clustering\Kmedian\Implementation\EuclideanDistance.cs" />
+    <Compile Include="Imaging\Clustering\Kmedian\IClusteringDistance.cs" />
+    <Compile Include="Imaging\Clustering\Kmedian\IClusteringAlgorithm.cs" />
+    <Compile Include="Imaging\Clustering\Kmedian\Implementation\Kmedian.cs" />
+    <Compile Include="Imaging\Clustering\Kmedian\Implementation\MedianAlgorithm.cs" />
+    <Compile Include="Imaging\Clustering\Kmedian\Implementation\StartSignsVectorGenerator.cs" />
+    <Compile Include="Imaging\Clustering\Kmedian\IStartSignsVectorGenerator.cs" />
+    <Compile Include="Imaging\Detectors\Forstner\Implementation\ForstrenResponseAngle.cs" />
+    <Compile Include="Imaging\Detectors\Implementation\ApertureEnumerator.cs" />
+    <Compile Include="Imaging\Detectors\Implementation\PointsDetector.cs" />
+    <Compile Include="Imaging\Detectors\Implementation\PointsDetectProcessor.cs" />
+    <Compile Include="Imaging\Detectors\Implementation\СharacteristicPoint.cs" />
+    <Compile Include="Imaging\Detectors\IPointsDetector.cs" />
+    <Compile Include="Imaging\Detectors\Forstner\IResponseAngle.cs" />
+    <Compile Include="Imaging\Detectors\IPointsDetectProcessor.cs" />
+    <Compile Include="Imaging\Extensions\ColorExtension.cs" />
+    <Compile Include="Imaging\Extensions\ColorGenerator.cs" />
+    <Compile Include="Imaging\Extensions\ColorMapper.cs" />
+    <Compile Include="Imaging\Filtering\FilteringProcessor\Implementation\FilterProcessor.cs" />
+    <Compile Include="Imaging\Filtering\FilteringProcessor\Implementation\GaussEnumerator.cs" />
+    <Compile Include="Imaging\Filtering\FilteringProcessor\Implementation\GaussFilterProcessor.cs" />
+    <Compile Include="Imaging\Filtering\FilteringProcessor\IMultiFilterProcessor.cs" />
+    <Compile Include="Imaging\Filtering\Filters\IFilter.cs" />
+    <Compile Include="Imaging\Filtering\Filters\Implementation\Aperture.cs" />
+    <Compile Include="Imaging\Filtering\Filters\Implementation\ApertureItem.cs" />
+    <Compile Include="Imaging\Filtering\Filters\Implementation\GaussFilter.cs" />
+    <Compile Include="Imaging\Filtering\Filters\Implementation\MedianFilter.cs" />
+    <Compile Include="Imaging\Filtering\Filters\Implementation\SobelFilter.cs" />
+    <Compile Include="Imaging\Filtering\FilteringProcessor\IFilterProcessor.cs" />
+    <Compile Include="Imaging\Filtering\FilteringProcessor\Implementation\SobelImageEnumerator.cs" />
+    <Compile Include="Imaging\Filtering\Filters\IMultiFilter.cs" />
+    <Compile Include="Imaging\Processors\ISourceImageProcessor.cs" />
+    <Compile Include="Imaging\Processors\PerItemProcessor\Algorithms\IPerItemAlgorithm.cs" />
+    <Compile Include="Imaging\Processors\PerItemProcessor\Algorithms\Implementation\Binarization.cs" />
+    <Compile Include="Imaging\Processors\PerItemProcessor\Algorithms\Implementation\LogarithmicCorrection.cs" />
+    <Compile Include="Imaging\Processors\PerItemProcessor\Algorithms\Implementation\OneTone.cs" />
+    <Compile Include="Imaging\Processors\PerItemProcessor\Algorithms\Implementation\Slice.cs" />
+    <Compile Include="Imaging\Processors\PerItemProcessor\PerItemImageProcessor.cs" />
+    <Compile Include="Imaging\Processors\PerItemProcessor\PerItemProcessorParameters.cs" />
+    <Compile Include="Imaging\Scanning\IScanner.cs" />
+    <Compile Include="Imaging\Scanning\IScanProcessor.cs" />
+    <Compile Include="Imaging\Scanning\ScanProcessor.cs" />
+    <Compile Include="Imaging\Scanning\Sequential\AbcMask.cs" />
+    <Compile Include="Imaging\Scanning\Sequential\LockableBitmapWrapper.cs" />
+    <Compile Include="Imaging\Scanning\Sequential\Region.cs" />
+    <Compile Include="Imaging\Scanning\Sequential\ScanInfo.cs" />
+    <Compile Include="Imaging\Scanning\Sequential\SequentialEnumerator.cs" />
+    <Compile Include="Imaging\Scanning\Sequential\SequentialScanner.cs" />
+    <Compile Include="Imaging\Statistics\ILuminanceStatisticsAnalyzer.cs" />
+    <Compile Include="Imaging\Statistics\LuminanceStatisticsAnalyzer.cs" />
+    <Compile Include="Imaging\Unmanaged\LockableBitmap.cs" />
+    <Compile Include="NeuralNetworks\Common\Implementation\HopfieldNeuralNetworkProcessor.cs" />
+    <Compile Include="NeuralNetworks\Common\INeuralNetworkProcessor.cs" />
+    <Compile Include="NeuralNetworks\Hopfield\IActivationFunction.cs" />
+    <Compile Include="NeuralNetworks\Hopfield\Implementation\HopfieldNetwork.cs" />
+    <Compile Include="NeuralNetworks\Hopfield\Implementation\HopfieldNeuron.cs" />
+    <Compile Include="NeuralNetworks\Hopfield\Implementation\NeuronState.cs" />
+    <Compile Include="NeuralNetworks\Hopfield\Implementation\Pattern.cs" />
+    <Compile Include="NeuralNetworks\Hopfield\Implementation\ThresholdActivation.cs" />
+    <Compile Include="NeuralNetworks\Hopfield\INeuralNetwork.cs" />
+    <Compile Include="NeuralNetworks\Hopfield\INeuron.cs" />
+    <Compile Include="NeuralNetworks\Hopfield\IPattern.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MISOI.Logging\MISOI.Logging.csproj">
+      <Project>{C04EF082-2CD3-49DA-B1C4-5A35F32EF6FC}</Project>
+      <Name>MISOI.Logging</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
